@@ -20,7 +20,7 @@
     {
       "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js/+esm",
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
-      "talkinghead": "https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@1.2/modules/talkinghead.mjs",
+      "talkinghead": "https://cdn.jsdelivr.net/gh/met4citizen/TalkingHead@1.2/modules/talkinghead.mjs"
 
     }
   }
@@ -30,7 +30,7 @@
 
   <script type="module">
 
-     import { TalkingHead } from "talkinghead";
+ import { TalkingHead } from "talkinghead";
 let head;
 let waitingForResponse = false;
 
@@ -67,14 +67,14 @@ document.addEventListener('DOMContentLoaded', async function(e) {
     console.log(error);
     nodeLoading.textContent = error.toString();
   }
-  // Add keydown event listener for space key
-  document.addEventListener('keydown', (event) => {
+});
+document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       listen();
     }
   });
-});
 
+  //used a different branch from server to get to work
 window.listen = function() {
   if (waitingForResponse) return;
   console.log('listen');
